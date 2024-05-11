@@ -1,12 +1,12 @@
 #!/bin/bash
 
 INSTALATION_FOLDER=$(cd "$(dirname "$0")" && pwd)
-AGENT_FOLDER="$INSTALATION_FOLDER/agent/*/"
+AGENT_FOLDER="$INSTALATION_FOLDER/agent"/*/
 GIT_FOLDER="$INSTALATION_FOLDER/git"
 
 # Función para conectar
-connecct() {
-    cd agent/*/
+connect() {
+    cd $AGENT_FOLDER
     ./agent-client
 }
 
