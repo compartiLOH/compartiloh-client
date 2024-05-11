@@ -2,6 +2,15 @@
 
 Client to connect your computer to CompartiLOH System.
 
+# Prerequisites
+
+You need some prerequisites to run compartiloh client and provide you own services.
+
+- Docker Engine
+- Docker API
+
+You can see in the supported [architectures section](https://github.com/compartiLOH/compartiloh-client?tab=readme-ov-file#supported-architectures) the compatibility with your system.
+
 ## User Guide
 
 The first step is download this repository
@@ -16,7 +25,7 @@ Then run the installation script providing the architecture version you want. E.
 install.sh x86_64
 ```
 
-You can review the supported architectures section
+You can review the [architectures section](https://github.com/compartiLOH/compartiloh-client?tab=readme-ov-file#supported-architectures) section
 
 This will be install all compartiLOH client in home folder
 
