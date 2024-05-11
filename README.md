@@ -99,4 +99,4 @@ You can see your client logs in `$HOME/.compartiloh/agent/x86_64/*.log` Each tim
 
 ## Supported Architectures
 
-- x86_64
+- Linux x86_64
