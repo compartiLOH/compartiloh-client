@@ -4,17 +4,86 @@ Client to connect your computer to CompartiLOH System.
 
 ## User Guide
 
-1. Download this repository
-2. Run 
+The first step is download this repository
+
 ```
-make dist-agent-client
+git clone https://github.com/compartiLOH/compartiloh-client.git
 ```
-3. Configure your token in the attribute token in the file config/config.yaml
-4. Run the agent
+
+Then run the installation script providing the architecture version you want. E.g: If you are in x86_64 run
+
 ```
-./agent-client
+install.sh x86_64
+```
+
+You can review the supported architectures section
+
+This will be install all compartiLOH client in home folder
+
+```
+$HOME/.compartiloh
+```
+
+CompartiLOH client will be installed in `$HOME/.compartiloh/cloh` path, but you can set client in PATH. Add the following lines in the corresponding file according to your shell, `.bashrc` for bash, `.zshrc` for zsh, and others.
+
+```
+#COMPARTILOH
+export COMPARTILOH_HOME="$HOME/.compartiloh"
+export PATH="$PATH:$COMPARTILOH_HOME"
+```
+
+Reload terminal or run `source` with your file. Like example
+
+```
+source ~/.zshrc
+```
+
+At final of this step, `cloh` CLI is available to run. The available commands can be viewed using `cloh help`. 
+
+```
+cloh help
+
+connect      Conectar el recurso al sistema. Requiere configuracion de token
+update       Actualizar CLI de compartiloh
+help         Mostrar este mensaje de ayuda
+```
+
+Now you can configure your token in the attribute token in the file `$HOME/.compartiloh/agent/x86_64/config/config.yaml`
+
+```
+remote:
+  server: 
+    host: "https://logs.compartiloh.com"
+    port: 443
+  frp:
+    agent:
+      host: "resources.compartiloh.com"
+      port: 7000
+    public:
+      host: "services.compartiloh.com"
+      port: 7000
+  auth:
+    url: "https://security.compartiloh.com"
+local:
+  api:
+    port: 3501
+  frp:
+    internal:
+        host: "localhost"
+        port: 7400
+    external:
+        host: "localhost"
+        port: 7401
+log:
+  level: "info"
+token: <<REPLACE TOKEN HERE>>
+```
+
+To connect resource to system run the client with `connect` option
+```
+cloh connect
 ```
 
 ## Troubleshooting
 
-You can see your client logs in the folder dist-client. Each time you connect the Agent, a new file will be created.
+You can see your client logs in `$HOME/.compartiloh/agent/x86_64/*.log` Each time you connect the Agent, a new file will be created.
