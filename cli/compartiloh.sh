@@ -13,8 +13,11 @@ connecct() {
 # Función para actualizar
 update() {
     cd $GIT_FOLDER
+    echo $GIT_FOLDER
     LAST_LOCAL_COMMIT=$(git log -1 --format="%H")
+    echo $LAST_LOCAL_COMMIT
     git fetch && LAST_REMOTE_COMMIT=$(git rev-parse origin/$(git rev-parse --abbrev-ref HEAD))
+    echo $LAST_REMOTE_COMMIT
     if [ "$LAST_LOCAL_COMMIT" = "$LAST_REMOTE_COMMIT" ]; then
         echo "Cliente actualizado"
     else
@@ -22,6 +25,9 @@ update() {
         git pull origin master
         ACTUAL_DIST=$(basename "$AGENT_FOLDER")
         DIST_VERSION="lib/$ACTUAL_DIST"
+        echo $ACTUAL_DIST
+        echo "$GIT_FOLDER/$DIST_VERSION"
+        echo "$INSTALATION_FOLDER/agent"
         cp -p -r "$GIT_FOLDER/$DIST_VERSION" "$INSTALATION_FOLDER/agent"
         echo "Cliente actualizado"
     fi

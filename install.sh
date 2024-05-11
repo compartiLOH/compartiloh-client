@@ -10,7 +10,7 @@ fi
 
 #Configuracion de carpetas de instalacion
 DIST_VERSION="lib/$1"
-INSTALATION_FOLDER=/usr/local/compartiloh
+INSTALATION_FOLDER="$HOME/.compartiloh"
 rm -rf $INSTALATION_FOLDER && mkdir -p $INSTALATION_FOLDER
 mkdir -p "$INSTALATION_FOLDER/agent"
 mkdir -p "$INSTALATION_FOLDER/git"
