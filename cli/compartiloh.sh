@@ -17,9 +17,7 @@ update() {
     cd $GIT_FOLDER
     echo $GIT_FOLDER
     LAST_LOCAL_COMMIT=$(git log -1 --format="%H")
-    echo $LAST_LOCAL_COMMIT
     git fetch && LAST_REMOTE_COMMIT=$(git rev-parse origin/$(git rev-parse --abbrev-ref HEAD))
-    echo $LAST_REMOTE_COMMIT
     if [ "$LAST_LOCAL_COMMIT" = "$LAST_REMOTE_COMMIT" ]; then
         echo "Cliente actualizado"
     else
