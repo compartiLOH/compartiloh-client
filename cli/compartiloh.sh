@@ -15,7 +15,6 @@ connect() {
 # Función para actualizar
 update() {
     cd $GIT_FOLDER
-    echo $GIT_FOLDER
     LAST_LOCAL_COMMIT=$(git log -1 --format="%H")
     git fetch && LAST_REMOTE_COMMIT=$(git rev-parse origin/$(git rev-parse --abbrev-ref HEAD))
     if [ "$LAST_LOCAL_COMMIT" = "$LAST_REMOTE_COMMIT" ]; then
