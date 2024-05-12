@@ -22,12 +22,12 @@ git clone https://github.com/compartiLOH/compartiloh-client.git
 Then run the installation script providing the architecture version you want. E.g: If you are in x86_64 run
 
 ```
-install.sh x86_64
+./install.sh x86_64
 ```
 
 You can review the [architectures section](https://github.com/compartiLOH/compartiloh-client?tab=readme-ov-file#supported-architectures) section
 
-This will be install all compartiLOH client in home folder
+This will install all compartiLOH client in home folder
 
 ```
 $HOME/.compartiloh
@@ -57,7 +57,7 @@ update       Actualizar CLI de compartiloh
 help         Mostrar este mensaje de ayuda
 ```
 
-Now you can configure your token in the attribute token in the file `$HOME/.compartiloh/agent/x86_64/config/config.yaml`
+Now you can configure your token in the attribute token in the file `$HOME/.compartiloh/agent/<arquitecture>/config/client-config.yaml`
 
 ```
 remote:
@@ -95,7 +95,13 @@ cloh connect
 
 ## Troubleshooting
 
-You can see your client logs in `$HOME/.compartiloh/agent/x86_64/*.log` Each time you connect the Agent, a new file will be created.
+You can see your client logs in `$HOME/.compartiloh/agent/<arquitecture>/*.log` Each time you connect the Agent, a new file will be created.
+
+Also note that the system is compatible with DOCKER_API_VERSION<=1.41, so in case the Agent is not connecting, please try running
+```
+export DOCKER_API_VERSION=1.41
+```
+
 
 ## Supported Architectures
 
