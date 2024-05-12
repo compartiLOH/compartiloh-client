@@ -95,7 +95,7 @@ cloh connect
 
 ## Troubleshooting
 
-You can see your client logs in `$HOME/.compartiloh/agent/x86_64/*.log` Each time you connect the Agent, a new file will be created.
+You can see your client logs in `$HOME/.compartiloh/agent/<arquitecture>/*.log` Each time you connect the Agent, a new file will be created.
 
 ## Supported Architectures
 
