@@ -4,7 +4,7 @@ set -e
 
 #Validacion de entrada
 if [ $# -eq 0 ]; then
-    echo "Error: Se requiere al menos el parámetro de version a instalar"
+    echo "Error: At least the version parameter to be installed is required"
     exit 1
 fi
 

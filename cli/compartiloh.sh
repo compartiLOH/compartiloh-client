@@ -18,28 +18,28 @@ update() {
     LAST_LOCAL_COMMIT=$(git log -1 --format="%H")
     git fetch && LAST_REMOTE_COMMIT=$(git rev-parse origin/$(git rev-parse --abbrev-ref HEAD))
     if [ "$LAST_LOCAL_COMMIT" = "$LAST_REMOTE_COMMIT" ]; then
-        echo "Cliente actualizado"
+        echo "Client updated"
     else
-        echo "Actualizando cliente"
+        echo "Updating client"
         git pull origin main
         ACTUAL_DIST=$(basename "$AGENT_FOLDER")
         DIST_VERSION="lib/$ACTUAL_DIST"
         cp -p -r "$GIT_FOLDER/$DIST_VERSION" "$INSTALATION_FOLDER/agent"
-        echo "Cliente actualizado. Recuerde configurar token nuevamente"
+        echo "Client updated. Please configure new token."
     fi
 }
 
 # Función para mostrar la ayuda
 show_help() {
     echo ""
-    echo "connect      Conectar el recurso al sistema. Requiere configuracion de token"
-    echo "update       Actualizar CLI de compartiloh"
-    echo "help         Mostrar este mensaje de ayuda"
+    echo "connect      Connect the resource to the system. Requires token configuration"
+    echo "update       Update  cloh CLI"
+    echo "help         Show this help message"
 }
 
 # Verificar el número de argumentos
 if [ $# -eq 0 ]; then
-    echo "Se requiere al menos un parámetro."
+    echo "At least one parameter is required"
     show_help
     exit 1
 fi
@@ -47,11 +47,9 @@ fi
 # Manejar los parámetros
 case "$1" in
     "connect")
-        echo "Conectando..."
         connect
         ;;
     "update")
-        echo "Actualizando..."
         update
         ;;
     "help")
