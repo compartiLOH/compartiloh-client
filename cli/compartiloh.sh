@@ -27,11 +27,8 @@ update() {
         git pull origin main
         ACTUAL_DIST=$(basename "$AGENT_FOLDER")
         DIST_VERSION="lib/$ACTUAL_DIST"
-        echo $ACTUAL_DIST
-        echo "$GIT_FOLDER/$DIST_VERSION"
-        echo "$INSTALATION_FOLDER/agent"
         cp -p -r "$GIT_FOLDER/$DIST_VERSION" "$INSTALATION_FOLDER/agent"
-        echo "Cliente actualizado"
+        echo "Cliente actualizado. Recuerde configurar token nuevamente"
     fi
 }
 
