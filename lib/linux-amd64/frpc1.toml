@@ -1,0 +1,11 @@
+serverAddr = "resources.compartiloh.com"
+serverPort = 7000
+
+webServer.addr = "127.0.0.1"
+webServer.port = 7400
+webServer.user = "admin"
+webServer.password = "admin"
+
+log.to = "custom"
+log.format = "text"
+log.level = "info"
