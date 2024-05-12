@@ -1,7 +1,9 @@
 #!/bin/bash
 
+set -e
+
 INSTALATION_FOLDER=$(cd "$(dirname "$0")" && pwd)
-AGENT_FOLDER="$INSTALATION_FOLDER/agent"/*/
+AGENT_FOLDER=$(ls -d "$INSTALATION_FOLDER/agent"/*/)
 GIT_FOLDER="$INSTALATION_FOLDER/git"
 
 # Función para conectar
@@ -22,7 +24,7 @@ update() {
         echo "Cliente actualizado"
     else
         echo "Actualizando cliente"
-        git pull origin master
+        git pull origin main
         ACTUAL_DIST=$(basename "$AGENT_FOLDER")
         DIST_VERSION="lib/$ACTUAL_DIST"
         echo $ACTUAL_DIST
