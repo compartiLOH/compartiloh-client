@@ -19,10 +19,10 @@ The first step is download this repository
 git clone https://github.com/compartiLOH/compartiloh-client.git
 ```
 
-Then run the installation script providing the architecture version you want. E.g: If you are in x86_64 run
+Then run the installation script providing the architecture version you want. E.g: If you are in Linux x86_64 run
 
 ```
-./install.sh x86_64
+./install.sh linux-amd64
 ```
 
 You can review the [architectures section](https://github.com/compartiLOH/compartiloh-client?tab=readme-ov-file#supported-architectures) section
@@ -105,4 +105,7 @@ export DOCKER_API_VERSION=1.41
 
 ## Supported Architectures
 
-- Linux x86_64
+- `darwin-amd64`: MacOS on x86_64 (64-bit)
+- `darwin-arm64`: MacOS on ARM64 (64-bit) on Apple Silicon devices like M1.
+- `linux-amd64` : Linux on x86_64 (64-bit)
+- `netbsd-amd64`: NetBSD on x86_64 (64-bit)
