@@ -17,8 +17,8 @@ mkdir -p "$INSTALATION_FOLDER/git"
 
 #Instalando el cliente (accesible desde cualquier ruta)
 SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
-cp -p -r "$SCRIPT_DIR/$DIST_VERSION" "$INSTALATION_FOLDER/agent"
 cp -p -r "$SCRIPT_DIR/cli/compartiloh.sh" "$INSTALATION_FOLDER/cloh"
+cp -p -r "$SCRIPT_DIR/$DIST_VERSION" "$INSTALATION_FOLDER/agent"
 
 #Configuracion de repositorio
 REPO="https://github.com/compartiLOH/compartiloh-client"

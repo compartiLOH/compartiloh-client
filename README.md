@@ -11,7 +11,7 @@ You need some prerequisites to run compartiloh client and provide you own servic
 
 You can see in the supported [architectures section](https://github.com/compartiLOH/compartiloh-client?tab=readme-ov-file#supported-architectures) the compatibility with your system.
 
-## User Guide
+## Install
 
 The first step is download this repository
 
@@ -57,6 +57,8 @@ update       Actualizar CLI de compartiloh
 help         Mostrar este mensaje de ayuda
 ```
 
+## Configuration
+
 Now you can configure your token in the attribute token in the file `$HOME/.compartiloh/agent/<arquitecture>/config/client-config.yaml`
 
 ```
@@ -88,9 +90,18 @@ log:
 token: <<REPLACE TOKEN HERE>>
 ```
 
+# User Guide
+
 To connect resource to system run the client with `connect` option
 ```
 cloh connect
+```
+
+## Update client
+
+To update CLI in your system run the client with `update` option
+```
+cloh update
 ```
 
 ## Troubleshooting

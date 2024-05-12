@@ -24,6 +24,7 @@ update() {
         git pull origin main
         ACTUAL_DIST=$(basename "$AGENT_FOLDER")
         DIST_VERSION="lib/$ACTUAL_DIST"
+        cp -p -r "$GIT_FOLDER/cli/compartiloh.sh" "$INSTALATION_FOLDER/cloh"
         cp -p -r "$GIT_FOLDER/$DIST_VERSION" "$INSTALATION_FOLDER/agent"
         echo "Client updated. Please configure new token."
     fi
