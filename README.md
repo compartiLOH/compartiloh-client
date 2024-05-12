@@ -11,7 +11,7 @@ You need some prerequisites to run compartiloh client and provide you own servic
 
 You can see in the supported [architectures section](https://github.com/compartiLOH/compartiloh-client?tab=readme-ov-file#supported-architectures) the compatibility with your system.
 
-## Install
+# Install
 
 The first step is download this repository
 
@@ -57,7 +57,7 @@ update       Actualizar CLI de compartiloh
 help         Mostrar este mensaje de ayuda
 ```
 
-## Configuration
+# Configuration
 
 Now you can configure your token in the attribute token in the file `$HOME/.compartiloh/agent/<arquitecture>/config/client-config.yaml`
 
@@ -113,10 +113,25 @@ Also note that the system is compatible with DOCKER_API_VERSION<=1.41, so in cas
 export DOCKER_API_VERSION=1.41
 ```
 
-
 ## Supported Architectures
 
 - `darwin-amd64`: MacOS on x86_64 (64-bit)
 - `darwin-arm64`: MacOS on ARM64 (64-bit) on Apple Silicon devices like M1.
 - `linux-amd64` : Linux on x86_64 (64-bit)
 - `netbsd-amd64`: NetBSD on x86_64 (64-bit)
+
+# Uninstall
+
+To perform fully unistall remove `compartiloh` folder in `$HOME` directory
+
+```
+rm -rf $HOME/.compartiloh
+```
+
+You can also delete all docker containers and images launched by cloh. Please note that this command may delete any other image containing `loh`, adjust to your convenience
+
+```
+docker ps -q -f name=loh | xargs docker stop
+docker ps -q -f name=loh | xargs docker rm
+docker images --format "{{.Repository}}" | grep loh | xargs docker rmi
+```
