@@ -97,6 +97,12 @@ cloh connect
 
 You can see your client logs in `$HOME/.compartiloh/agent/<arquitecture>/*.log` Each time you connect the Agent, a new file will be created.
 
+Also note that the system is compatible with DOCKER_API_VERSION<=1.41, so in case the Agent is not connecting, please try running
+```
+export DOCKER_API_VERSION=1.41
+```
+
+
 ## Supported Architectures
 
 - Linux x86_64
